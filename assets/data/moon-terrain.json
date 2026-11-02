@@ -1,0 +1,35 @@
+{
+  "source": "NASA Moon Trek, LRO LOLA DEM 5mpp, Site04: Shackleton Rim, S Pole (Site04_final_adj_5mpp_surf.tif)",
+  "credit": "Barker, M.K., et al. (2020), Improved LOLA Elevation Maps for South Pole Landing Sites: Error Estimates and Their Impact on Illumination Conditions, Planetary & Space Science, doi:10.1016/j.pss.2020.105119",
+  "elevation_reference": "metres relative to a 1737400 m radius",
+  "processing": "local window centred on source pixel (200,1024), about 1.0 km east and 5.1 km south of the tile corner, chosen as the flattest 1.28 km window; regional window centred on (700,1000), 10x10 block mean; gaps filled with nearest value. About 90 percent of source pixels are interpolated by the original authors.",
+  "label": "NASA DATA (derived)",
+  "tiles": {
+    "local": {
+      "file": "shackleton-local-h16.bin",
+      "format": "uint16 little-endian, row-major",
+      "width": 256,
+      "height": 256,
+      "metres_per_pixel": 5.0,
+      "extent_m": 1280.0,
+      "elev_min_m": 600.21,
+      "elev_max_m": 692.19,
+      "height_formula": "elev_m = elev_min_m + value/65535*(elev_max_m-elev_min_m)",
+      "slope_mean_deg": 5.09,
+      "slope_max_deg": 31.97
+    },
+    "regional": {
+      "file": "shackleton-regional-h16.bin",
+      "format": "uint16 little-endian, row-major",
+      "width": 128,
+      "height": 128,
+      "metres_per_pixel": 50.0,
+      "extent_m": 6400.0,
+      "elev_min_m": 164.15,
+      "elev_max_m": 1736.98,
+      "height_formula": "elev_m = elev_min_m + value/65535*(elev_max_m-elev_min_m)",
+      "slope_mean_deg": 13.08,
+      "slope_max_deg": 30.71
+    }
+  }
+}

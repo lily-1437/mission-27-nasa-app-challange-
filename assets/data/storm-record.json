@@ -1,0 +1,90 @@
+{
+  "label": "NOAA DATA (event record)",
+  "event": "May 2024 solar storm, flares and proton event, 10-11 May 2024",
+  "active_region": "NOAA AR 3664",
+  "note": "Values copied from published reports. Verify against the NOAA SWPC archive before submission. Crew dose and shelter results in the game are MISSION27 SIMULATION.",
+  "flares": [
+    {
+      "id": "flare-2024-05-10-0654",
+      "class": "X3.9",
+      "begin_utc": "2024-05-10T06:27:00Z",
+      "peak_utc": "2024-05-10T06:54:00Z",
+      "end_utc": "2024-05-10T07:06:00Z",
+      "region": 3664,
+      "instrument": "GOES-16 (G16), 1-8 A X-ray",
+      "integrated_flux_as_listed": "4.4E-01",
+      "source": "NOAA SWPC edited events file 20240510events.txt (event 1310), confirmed. Early reports of X4.0 were superseded by the final X3.9.",
+      "status": "confirmed"
+    },
+    {
+      "id": "flare-2024-05-11-0123",
+      "class": "X5.8",
+      "begin_utc": "2024-05-11T01:10:00Z",
+      "peak_utc": "2024-05-11T01:23:00Z",
+      "end_utc": "2024-05-11T01:39:00Z",
+      "region": 3664,
+      "instrument": "GOES-16 (G16), 1-8 A X-ray",
+      "integrated_flux_as_listed": "6.4E-01",
+      "source": "NOAA SWPC edited events file 20240511events.txt (event 1680), confirmed",
+      "status": "confirmed"
+    },
+    {
+      "id": "flare-2024-05-11-1144",
+      "class": "X1.5",
+      "begin_utc": "2024-05-11T11:15:00Z",
+      "peak_utc": "2024-05-11T11:44:00Z",
+      "end_utc": "2024-05-11T12:05:00Z",
+      "region": 3664,
+      "instrument": "GOES-16 (G16), 1-8 A X-ray",
+      "integrated_flux_as_listed": "2.6E-01",
+      "source": "NOAA SWPC edited events file 20240511events.txt (event 1860), confirmed",
+      "status": "confirmed"
+    }
+  ],
+  "proton_events": [
+    {
+      "id": "proton-2024-05-10",
+      "energy": ">10 MeV",
+      "peak_flux_pfu": 206,
+      "peak_utc": "2024-05-10T17:45:00Z",
+      "s_scale_by_thresholds": "S2",
+      "source": "NOAA SWPC Report of Solar-Geophysical Activity issued 2200Z 10 May 2024, read through a SpaceWeatherLive mirror. Confirm against 0510RSGA.txt",
+      "status": "mirror, confirm with 0510RSGA.txt"
+    },
+    {
+      "id": "proton-2024-05-11",
+      "energy": ">10 MeV",
+      "start_utc": "2024-05-11T02:10:00Z",
+      "start_source": "SIDC article 'X-class festival continues' (new proton event after the X5.8 flare)",
+      "peak_flux_pfu": 116,
+      "peak_utc": "2024-05-11T09:10:00Z",
+      "peak_gt100MeV_pfu": 7,
+      "peak_gt100MeV_utc": "2024-05-11T07:15:00Z",
+      "s_scale_by_thresholds": "S2",
+      "end_utc": null,
+      "source": "NOAA SWPC report 0511RSGA.txt (SDF 132, issued 2200Z 11 May 2024), confirmed",
+      "status": "confirmed"
+    },
+    {
+      "id": "proton-2024-05-11-decline",
+      "energy": ">10 MeV",
+      "peak_flux_pfu": 71,
+      "peak_utc": "2024-05-11T21:00:00Z",
+      "note": "Highest value in the 11/2100Z to 12/2100Z window, at the start of the window, so the flux was declining.",
+      "s_scale_by_thresholds": "S1",
+      "source": "NOAA SWPC report 0512RSGA.txt (SDF 133, issued 2200Z 12 May 2024), confirmed",
+      "status": "confirmed"
+    }
+  ],
+  "thresholds": {
+    "swpc_warning_pfu_gt10MeV": 10,
+    "s_scale_pfu_gt10MeV": [10, 100, 1000, 10000, 100000]
+  },
+  "context": "ESA's space environment report says the event had few energetic particles, so the radiation hazard was modest compared with the geomagnetic storm.",
+  "sources": [
+    "https://www.spaceweatherlive.com/en/archive/2024/05/10/rsga.html",
+    "https://sidc.be/article/x-class-festival-continues",
+    "https://www.spaceweatherlive.com/ca/arxiu/2024/05/11/sidc-ursigram.html",
+    "https://space-env.esa.int/?p=7192"
+  ]
+}

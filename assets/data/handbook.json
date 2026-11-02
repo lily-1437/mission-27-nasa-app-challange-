@@ -1,0 +1,108 @@
+{
+  "source": "NASA Technical Reports Server (NTRS), Apollo Lunar Surface Journal, NOAA SWPC",
+  "label": "NASA DATA / TECHNICAL CODEX",
+  "categories": [
+    {
+      "id": "physics",
+      "name": "Lunar Environment & Physics",
+      "articles": [
+        {
+          "id": "gravity-vacuum",
+          "title": "Low Gravity & Vacuum Mechanics",
+          "tag": "PHYSICS",
+          "content": "The Moon's surface gravity is 1.62 m/s² (~1/6th of Earth's 9.81 m/s²). Without an atmospheric buffer, there is no air resistance, atmospheric pressure is effectively zero (10⁻¹² torr hard vacuum), and thermal swings range from +120°C in direct sunlight to -130°C in shadow (-246°C in permanently shadowed craters like Shackleton). Astronauts must adapt to ballistic gait dynamics, momentum preservation, and rapid radiant heat loss."
+        },
+        {
+          "id": "regolith-hazards",
+          "title": "Lunar Regolith & Dust Dynamics",
+          "tag": "GEOLOGY",
+          "content": "Lunar soil (regolith) is created by billions of years of micrometeorite bombardment without atmospheric weathering. The grains are sub-micron to millimeter shards of glass and minerals with razor-sharp jagged edges. Regolith carries an electrostatic charge induced by solar UV and solar wind plasma, causing it to cling tenaciously to spacesuit fabrics, optical visors, and mechanical seals, posing severe abrasion and inhalation risks."
+        }
+      ]
+    },
+    {
+      "id": "radiation",
+      "name": "Radiation Protection & Space Weather",
+      "articles": [
+        {
+          "id": "gcr-spe",
+          "title": "Galactic Cosmic Rays vs Solar Particle Events",
+          "tag": "RADIATION",
+          "content": "Deep space astronauts face two primary radiation sources: Galactic Cosmic Rays (GCR)—high-energy relativistic protons and heavy HZE nuclei from outside the solar system providing a steady ~0.03 mSv/hr dose—and Solar Particle Events (SPE). SPEs erupt from coronal mass ejections (CMEs) and solar flares, accelerating protons (>10 MeV) to relativistic speeds. During extreme SPE events (e.g., the May 2024 active region AR3664), unshielded dose rates can spike to tens or hundreds of mSv/hr."
+        },
+        {
+          "id": "shelter-shielding",
+          "title": "Water-Jacket & Regolith Storm Shelters",
+          "tag": "SURVIVAL",
+          "content": "High-Z materials like lead generate dangerous secondary bremsstrahlung radiation when struck by high-energy protons. Low-Z materials rich in hydrogen (water, polyethylene) are far superior proton absorbers. MISSION27 Outpost integrates a central water-jacket core reserve containing 5,000 liters of potable water and greywater recycling buffer, augmented by a 1-meter sintered regolith berm overhead, reducing proton exposure by >90%."
+        }
+      ]
+    },
+    {
+      "id": "lifesupport",
+      "name": "ECLSS & Closed-Loop Life Support",
+      "articles": [
+        {
+          "id": "atmosphere-eclss",
+          "title": "Cabin Atmosphere & CO2 Scrubbing",
+          "tag": "ECLSS",
+          "content": "Nominal habitat atmosphere is maintained at 101.3 kPa (14.7 psi) with 21% O2 and 79% N2. Carbon dioxide is extracted continuously via regenerative amine beds and solid amine vacuum desorption (SAVD) to keep partial CO2 below 0.4 kPa. Oxygen recovery utilizes the Sabatier reactor (CO2 + 4H2 -> CH4 + 2H2O) coupled with water electrolysis to close the metabolic oxygen loop up to 98%."
+        },
+        {
+          "id": "water-recovery",
+          "title": "Vapor Compression Distillation Loop",
+          "tag": "ECLSS",
+          "content": "Water recovery achieves >98% efficiency by combining urine processor assemblies (UPA) utilizing vacuum vapor compression distillation with catalytic oxidation greywater polishing. Moisture transpired by crops in the Greenhouse module is condensed directly from humidity air handlers into the ultra-pure water reservoir."
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "name": "Power Generation & Energy Budgets",
+      "articles": [
+        {
+          "id": "solar-fuelcell",
+          "title": "Polar Photovoltaics & Fuel Cell Buffers",
+          "tag": "POWER",
+          "content": "Located on the rim of Shackleton Crater (89.9°S), the outpost exploits 'peaks of eternal light' where vertical solar towers receive sunlight ~86% of the year at shallow grazing angles. Solar arrays deliver up to 25 kW peak. Regenerative fuel cells (RFCs) store energy during eclipse periods using excess solar power to electrolyze water into H2 and O2, then recombine them during occultation."
+        },
+        {
+          "id": "power-prioritization",
+          "title": "Load-Shedding & Essential Allocations",
+          "tag": "OPERATIONS",
+          "content": "During solar dust obscuration or equipment malfunction, power must be strictly rationed. The life-support subsystem requires an absolute non-negotiable floor of 4.0 kW to power circulation blowers, trace contaminant filters, and oxygen injectors. Greenhouse LEDs and crew habitat comfort heaters are non-essential and must be shed first during electrical grid crises."
+        }
+      ]
+    },
+    {
+      "id": "eva",
+      "name": "EVA Operations & Lunar Roving",
+      "articles": [
+        {
+          "id": "spacesuit-airlock",
+          "title": "Exploration Extravehicular Mobility Unit (xEMU)",
+          "tag": "EVA",
+          "content": "The xEMU operates at 29.6 kPa (4.3 psi) of 100% pure oxygen to maximize joint mobility without glove stiffness. Before egress, astronauts undergo a 60-minute in-suit oxygen prebreathe protocol to purge dissolved nitrogen from bloodstream tissues, preventing decompression sickness (the bends). The portable life-support system (PLSS) uses water ice sublimators for thermal dissipation."
+        },
+        {
+          "id": "lunar-rover",
+          "title": "Lunar Terrain Vehicle (LTV) Dynamics",
+          "tag": "ROVER",
+          "content": "The MISSION27 rover features independent electric four-wheel hub motors with flexible wire-mesh titanium tires. Due to low gravity (1/6th g), tire traction is diminished while vehicle inertia remains identical to Earth mass. Sudden sharp turns at speed induce roll-over hazards. Climbing crater rim slopes (>15°) triples battery drain rate and requires low-gear torque distribution."
+        }
+      ]
+    },
+    {
+      "id": "geology",
+      "name": "Lunar Field Geology & Sampling",
+      "articles": [
+        {
+          "id": "rock-types",
+          "title": "Highland Anorthosite, Basalts & Breccias",
+          "tag": "SCIENCE",
+          "content": "Lunar geology is dominated by three main rock suites: (1) Anorthosite, light-colored plutonic rock rich in calcium-rich plagioclase feldspar representing the ancient primary lunar crust formed in a primordial magma ocean; (2) Mare Basalt, dark volcanic rock rich in iron, magnesium, and ilmenite (titanium oxide) from mantle eruptions; and (3) Impact Breccia, composite clastic rocks pulverized, melted, and fused by high-velocity meteorite bombardment."
+        }
+      ]
+    }
+  ]
+}

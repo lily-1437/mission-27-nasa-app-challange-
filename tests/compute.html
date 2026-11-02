@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MISSION27 - Compute Engine Test Suite</title>
+  <style>
+    body { background: #1C1C1E; color: #E8E8E6; font-family: 'Courier New', monospace; padding: 24px; }
+    h1 { color: #00BFCF; margin-bottom: 8px; }
+    .test-box { border: 1px solid #8C8B88; padding: 16px; margin-bottom: 16px; background: #252527; border-radius: 4px; }
+    .pass { color: #4ADE80; font-weight: bold; }
+    .fail { color: #FF4D5E; font-weight: bold; }
+    .summary { font-size: 1.2rem; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>MISSION27 // COMPUTE TEST SUITE</h1>
+  <p>Validating pure computational physics against known telemetry inputs...</p>
+  <div id="results"></div>
+
+  <script type="module">
+    import { angularDistanceLon, findBestEpicMatch } from '../src/compute/epic-match.js';
+    import { calculateSlopeDegrees, getMobilitySpeedMultiplier } from '../src/compute/slope.js';
+    import { calculateDoseRate, getStormThreatLevel } from '../src/compute/dose.js';
+    import { simulateLeakStep, getPressureHazard } from '../src/compute/pressure.js';
+
+    const resultsEl = document.getElementById('results');
+    let passed = 0;
+    let failed = 0;
+
+    function assert(name, condition, details = '') {
+      const div = document.createElement('div');
+      div.className = 'test-box';
+      if (condition) {
+        passed++;
+        div.innerHTML = `<span class="pass">[PASS]</span> ${name} <small style="color:#8C8B88">${details}</small>`;
+      } else {
+        failed++;
+        div.innerHTML = `<span class="fail">[FAIL]</span> ${name} <small style="color:#FF4D5E">${details}</small>`;
+      }
+      resultsEl.appendChild(div);
+    }
+
+    // 1. EPIC Match Tests
+    const testRecords = [
+      { image: 'frame_pacific', centroid_coordinates: { lat: 20, lon: 164.4 } },
+      { image: 'frame_indianocean', centroid_coordinates: { lat: 20, lon: 83.3 } },
+      { image: 'frame_atlantic', centroid_coordinates: { lat: 20, lon: -24.7 } }
+    ];
+    const match = findBestEpicMatch(testRecords, 90.0);
+    assert('EPIC Longitude Match (Bangladesh 90°E target)', match.record.image === 'frame_indianocean', `Selected ${match.record.image}, distance ${match.angularDistance.toFixed(2)}°`);
+
+    const wrapDist = angularDistanceLon(179, -179);
+    assert('EPIC Meridian Wrap-around Distance', Math.abs(wrapDist - 2) < 0.001, `Expected 2°, got ${wrapDist}°`);
+
+    // 2. Slope & Mobility Tests
+    const slopeZero = calculateSlopeDegrees(0, 0);
+    assert('Slope Angle flat terrain', slopeZero === 0, `Expected 0°, got ${slopeZero}°`);
+    const slopeIncline = calculateSlopeDegrees(1, 0);
+    assert('Slope 45° incline', Math.abs(slopeIncline - 45) < 0.01, `Expected 45°, got ${slopeIncline.toFixed(2)}°`);
+    const speedFlat = getMobilitySpeedMultiplier(2);
+    const speedSteep = getMobilitySpeedMultiplier(26);
+    assert('Mobility speed penalty on steep slope', speedFlat === 1.0 && speedSteep === 0.35, `Flat: ${speedFlat}, Steep: ${speedSteep}`);
+
+    // 3. Radiation & Dose Tests
+    const stormTier = getStormThreatLevel(206);
+    assert('Storm Threat Level for 206 pfu (May 10 event)', stormTier.scale === 'S2', `Got ${stormTier.scale} (${stormTier.label})`);
+    const doseOutside = calculateDoseRate(206, 'X3.9', false);
+    const doseInside = calculateDoseRate(206, 'X3.9', true);
+    assert('Water Shelter Attenuation (>=90%)', doseInside < doseOutside * 0.1, `Outside: ${doseOutside.toFixed(2)} mSv/h, Inside: ${doseInside.toFixed(2)} mSv/h`);
+
+    // 4. Pressure Tests
+    const p0 = 101.3;
+    const p1 = simulateLeakStep(p0, 15, 120, 10);
+    assert('Orifice pressure decay step', p1 < p0 && p1 > 90, `101.3 kPa decayed to ${p1} kPa after 10s`);
+    const hazard = getPressureHazard(50);
+    assert('Pressure hazard rating', hazard.status === 'CRITICAL', `Got ${hazard.status}`);
+
+    const summary = document.createElement('div');
+    summary.className = 'summary';
+    summary.innerHTML = `<p><strong>Results:</strong> <span class="pass">${passed} Passed</span>, <span class="${failed ? 'fail' : 'pass'}">${failed} Failed</span></p>`;
+    resultsEl.appendChild(summary);
+  </script>
+</body>
+</html>

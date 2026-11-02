@@ -1,0 +1,16 @@
+{
+  "name": "MISSION27: Lunar Outpost Simulation",
+  "short_name": "MISSION27",
+  "description": "Educational 3D Lunar Outpost Simulation for NASA Space Apps. Train on Earth. Survive the Moon.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1C1C1E",
+  "theme_color": "#00BFCF",
+  "icons": [
+    {
+      "src": "assets/icons/mars preview.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

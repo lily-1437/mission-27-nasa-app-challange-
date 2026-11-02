@@ -1,0 +1,67 @@
+{
+  "source": "MISSION27 SIMULATION ENGINE",
+  "label": "SIMULATION SCENARIOS",
+  "emergencies": {
+    "radiation": {
+      "id": "radiation_burst",
+      "name": "SOLAR PARTICLE EVENT (SPE)",
+      "flare_class": "X3.9",
+      "proton_flux_pfu": 206,
+      "time_to_impact_sec": 35,
+      "description": "SWPC satellites detect coronal mass ejection directed at Earth-Moon system. Extreme proton flux incoming.",
+      "shelter_threshold_pfu": 10,
+      "data_ref": "NOAA AR 3664 / GOES-16 Event 1310"
+    },
+    "depressurization": {
+      "id": "rapid_depress",
+      "name": "RAPID CABIN DEPRESSURIZATION",
+      "initial_pressure_kpa": 101.3,
+      "target_module": "greenhouse",
+      "hole_diameter_mm": 18,
+      "volume_m3": 95,
+      "critical_time_sec": 40,
+      "description": "Micrometeorite impact breach detected in external pressure hull. Atmosphere venting to vacuum."
+    },
+    "power": {
+      "id": "grid_overload",
+      "name": "POWER GRID RECONFIGURATION",
+      "available_power_kw": 7.5,
+      "min_life_support_kw": 4.0,
+      "description": "Regenerative fuel cell sub-bus tripped offline. Available solar power reduced. Manual load balance required."
+    },
+    "cooling": {
+      "id": "suit_cooling",
+      "name": "SUIT SUBLIMATOR COOLING FAILURE",
+      "water_flow_rate_normal": 1.2,
+      "current_flow_rate": 0.15,
+      "temp_rise_rate_c_min": 2.4,
+      "description": "EVA thermal loop ice sublimation port clogged. Astronaut core temperature rising rapidly."
+    }
+  },
+  "training": {
+    "leak_hunt": {
+      "time_limit_sec": 45,
+      "modules": ["HABITAT", "COMMAND", "AIRLOCK", "GREENHOUSE"],
+      "pass_threshold_kpa": 85.0
+    },
+    "power_routing": {
+      "available_solar_kw": 12.0,
+      "min_life_support_kw": 4.0,
+      "greenhouse_target_kw": 3.5,
+      "heaters_kw": 2.0,
+      "avionics_kw": 1.5
+    },
+    "radiation_drill": {
+      "time_limit_sec": 30,
+      "crew": ["Ari", "Maya", "Leo", "Nova"]
+    },
+    "wiring_bench": {
+      "connections": 4,
+      "time_limit_sec": 60
+    },
+    "command_triage": {
+      "alerts_count": 4,
+      "dilemma_id": "maya_vs_leo"
+    }
+  }
+}

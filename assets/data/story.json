@@ -1,0 +1,60 @@
+{
+  "scenes": [
+    {
+      "id": "intro",
+      "title": "PROLOGUE: RETURN TO SHACKLETON",
+      "nextScreen": "TRAINING",
+      "lines": [
+        {
+          "speaker": "Ari (Commander)",
+          "role": "MISSION COMMANDER",
+          "text": "Fifty years after the Apollo landings, we stand on the precipice of humanity's permanent frontier. Welcome to MISSION27.",
+          "caption": "Ari welcomes the crew to the 27-hour critical outpost evaluation."
+        },
+        {
+          "speaker": "Maya (Systems Engineer)",
+          "role": "SYSTEMS LEAD",
+          "text": "Shackleton Crater's rim offers near-continuous sunlight for our photovoltaics, but the thermal extremes and space weather won't give us a second chance.",
+          "caption": "Maya briefs on Shackleton rim environmental constraints."
+        },
+        {
+          "speaker": "Nova (Life Support)",
+          "role": "ECLSS SPECIALIST",
+          "text": "Our closed-loop ECLSS and water recycling systems are tested, but before we fly out to the lunar outpost, we must certify every procedure on Earth.",
+          "caption": "Nova emphasizes Earth training certification."
+        },
+        {
+          "speaker": "Leo (Science Specialist)",
+          "role": "SCIENCE OFFICER",
+          "text": "From deep mantle basalt samples to monitoring our home planet via DSCOVR satellite feeds, the scientific yield will redefine planetary exploration.",
+          "caption": "Leo highlights the geological and Earth observation science goals."
+        }
+      ]
+    },
+    {
+      "id": "landing",
+      "title": "TOUCHDOWN: THE LUNAR OUTPOST",
+      "nextScreen": "MOON",
+      "lines": [
+        {
+          "speaker": "Ari (Commander)",
+          "role": "MISSION COMMANDER",
+          "text": "Touchdown confirmed at Shackleton Outpost. Habitat power bus is active and cabin pressure is holding at 101.3 kPa.",
+          "caption": "Commander Ari reports successful touchdown on the lunar surface."
+        },
+        {
+          "speaker": "Maya (Systems Engineer)",
+          "role": "SYSTEMS LEAD",
+          "text": "Solar arrays are deployed and tracking the low horizon sun. Rover telemetry is green. Ready for operations.",
+          "caption": "Maya confirms base power and vehicle systems."
+        },
+        {
+          "speaker": "Nova (Life Support)",
+          "role": "ECLSS SPECIALIST",
+          "text": "CO2 scrubbers operating at 98% efficiency. Remember the golden rule: maintain at least 4.0 kW to life support at all times.",
+          "caption": "Nova sets life support priority."
+        }
+      ]
+    }
+  ]
+}
